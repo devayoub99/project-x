@@ -1,7 +1,11 @@
+import { Outlet } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
+
 export default function App() {
   return (
-    <div>
-      <h3>Hi</h3>
-    </div>
+    <>
+      <Navigation />
+      <Outlet />
+    </>
   );
 }

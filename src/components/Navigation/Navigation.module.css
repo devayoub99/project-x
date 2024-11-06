@@ -1,0 +1,142 @@
+.header {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.over-all {
+  position: relative;
+  z-index: 15;
+  color: #fff;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 6px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.linkText {
+  font-size: 12px;
+}
+
+.burgerIcon {
+  width: 25px;
+  cursor: pointer;
+  position: relative;
+  position: absolute;
+  left: 20px;
+
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.5s ease-in-out;
+  z-index: 1000;
+  padding: 10px 0;
+
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+
+.sidebar li a {
+  display: block;
+  width: 100%;
+  color: #000;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.navbarLg {
+  display: none;
+
+  @media (min-width: 576px) {
+    display: block;
+  }
+}
+
+.sidebarLg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sidebarLg li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sidebarLg li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-weight: 600;
+  position: relative;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whiteText {
+  color: #fff;
+}
+
+.sidebarLg li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius);
+  transition: var(--short-duration);
+}
+
+.sidebarLg li a:hover::before {
+  background-color: var(--light-orange);
+}
